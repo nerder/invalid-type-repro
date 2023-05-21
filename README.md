@@ -1,16 +1,9 @@
-# my_flutter_app
+# How to reproduce
 
-A new Flutter project.
+1. run `flutter pub run build_runner watch --delete-conflicting-outputs`
+2. broke the code of update_subscription_event.dart to trigger a rebuild
+3. fix the code of update_subscription_event.dart to trigger a rebuild
 
-## Getting Started
+# Expected result
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The second build will correctly fix the generated code by placing `SimpleSubscription` instead of `InvalidType`
